@@ -1,0 +1,25 @@
+{
+    "BaseURL": "http://www.in.gr/",
+    "NetworkLocation": ".in.gr",
+    "Filenames": {
+        "LinksFetched": "in-LinksFetched.pickle",
+        "LinksToFetch": "in-LinksToFetch.pickle",
+        "NewsJSON":     "in-news.json"
+    },
+    "NewsRegEx": {
+        "NewsTitle":        "<h1>(.*?)</h1>[.\\s\\S]*?<div id=\".*?-article\">",
+        "NewsAuthor":       "<meta name=\"AUTHOR\" content=\"(.*?)\">",
+        "NewsDescription":  "<meta name=\"DESCRIPTION\" content=\"([.\\s\\S]*?)\" />",
+        "NewsKeywords":     "<meta name=\"KEYWORDS\" content=\"(.*?)\" />",
+        "NewsDateCreated":  "<p class=\"article-date-info ArticleId_.*?\">\\s*?.*?<ins datetime=\".*?\"><em>\\s*?.*?:(.*?)</em></ins>",
+        "NewsDateUpdated":  "<ins datetime=\".*?\"><em>\\s*?.*?:(.*?)</em></ins>\\s*?</p>",
+        "NewsText":         "<!--intext_content_tag_start--><div id=\"intext_content_tag\">([.\\s\\S]*?)</div><!-- intext_content_tag_end-->",
+        "NewsCredits":      "<p class=\"credits\">(.*?)</p>"
+    },
+    "LinksRegEx": {
+        "LocalLinks":       "<a href=\"(.*?)\"",
+        "LinksExcluded":    ".*?/netvolution/.*?|.*?/Themes/.*?|.*?/Temp/.*?|.*?/z_.*?|.*?/polls-archive/.*?/\\?plid=.*?|.*?rss\\..*?|.*?expressads.*?|.*?dev\\..*?|.*?forum\\..*?|.*?/chat\\..*?|.*?pdf$|.*?jpg$|.*?jpeg$|.*?png$|.*?gif$|.*?xls$|.*?ico$",
+        "LinksIncluded":    ".*?/article\\?aid=.*?|.*?/post\\?aid=.*?"
+    },
+    "DelayRange": [ 11, 16]
+}

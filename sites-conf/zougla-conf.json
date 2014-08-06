@@ -1,0 +1,24 @@
+{
+    "BaseURL": "http://www.zougla.gr",
+    "NetworkLocation": ".zougla.gr",
+    "Filenames": {
+        "LinksFetched": "zougla-LinksFetched.pickle",
+        "LinksToFetch": "zougla-LinksToFetch.pickle",
+        "NewsJSON":     "zougla-news.json"
+    },
+    "NewsRegEx": {
+        "NewsTitle":        "<h1 class=\"article_title\">\\s*?(.*?)</h1>",
+        "NewsAuthor":       "<div class=\"author\">\\s*(.*?)\\s*?</div>",
+        "NewsDescription":  "<meta name=\"description\" content=\"(.*?)\" />",
+        "NewsKeywords":     "<meta name=\"keywords\" content=\"(.*?)\" />",
+        "NewsDateCreated":  "<div class=\"top_date\">\\s*?.*?: (.*?)\\s*?</div>",
+        "NewsDateUpdated":  "<div class=\"date\">\\s*?<p>\\s*?.*?: (.*?)</p>\\s*?</div>",
+        "NewsText":         "<div class=\"description\">\\s([.\\s\\S]*?)\\s.*?</div>"
+    },
+    "LinksRegEx": {
+        "LocalLinks":       "<a href=\"(.*?)\"",
+        "LinksExcluded":    ".*?file.ashx.*?|.*?javascript.*?|.*?mailto:.*?|.*?xml.*?",
+        "LinksIncluded":    ".*?/article/.*?"
+    },
+    "DelayRange": [ 20, 26]
+}

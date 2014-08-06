@@ -1,0 +1,24 @@
+{
+    "BaseURL": "http://www.protothema.gr/",
+    "NetworkLocation": ".protothema.gr",
+    "Filenames": {
+        "LinksFetched": "protothema-LinksFetched.pickle",
+        "LinksToFetch": "protothema-LinksToFetch.pickle",
+        "NewsJSON":     "protothema-news.json"
+    },
+    "NewsRegEx": {
+        "NewsTitle":        "<meta property=\"og:title\" content=\"(.*?)\" />",
+        "NewsAuthor":       "<div class=\"article-info\"><span class=\"name\">(.*?)</span><span class=\"time\">.*?</span><span class=\"time\">.*?</span></div>",
+        "NewsDescription":  "<meta property=\"og:description\" content=\"(.*?)\" />",
+        "NewsKeywords":     "<meta name=\"KEYWORDS\" content=\"(.*?)\" />",
+        "NewsDateCreated":  "<p class=\"date\">(.*?)</p>",
+        "NewsDateUpdated":  "<div class=\"article-info\"><span class=\"name\">.*?</span><span class=\"time_updated\">(.*?)</div>",
+        "NewsText":         "<div class=\"article-content\">([.\\s\\S]*?)</div>"
+    },
+    "LinksRegEx": {
+        "LocalLinks":       "<a href=\"(.*?)\"",
+        "LinksExcluded":    ".*?/netvolution/.*?|.*?/Themes/.*?|.*?/Temp/.*?",
+        "LinksIncluded":    ".*?/article/.*?"
+    },
+    "DelayRange": [ 11, 16]
+}

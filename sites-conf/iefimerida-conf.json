@@ -1,0 +1,24 @@
+{
+    "BaseURL": "http://www.iefimerida.gr",
+    "NetworkLocation": ".iefimerida.gr",
+    "Filenames": {
+        "LinksFetched": "iefimerida-LinksFetched.pickle",
+        "LinksToFetch": "iefimerida-LinksToFetch.pickle",
+        "NewsJSON":     "iefimerida-news.json"
+    },
+    "NewsRegEx": {
+        "NewsTitle":        "<div class=\"views-field-title\">\\s.*?<span class=\"field-content\"><h1>(.*?)</h1></span>\\s.*?</div>",
+        "NewsAuthor":       "<div class=\"views-field-value\">\\s*<span class=\"field-content\"><a href=\".*?\">(.*?)</a></span>",
+        "NewsDescription":  "<meta name=\"description\" content=\"(.*?)\" />",
+        "NewsKeywords":     "<meta name=\"keywords\" content=\"(.*?)\" />",
+        "NewsDateCreated":  "<div class=\"views-field-created\">\\s.*?<span class=\"field-content\">(.*?)</span>\\s.*?</div>",
+        "NewsDateUpdated":  "<div class=\"date\">\\s*?<p>\\s*?.*?: (.*?)</p>\\s*?</div>",
+        "NewsText":         "<div class=\"content clear-block\">\\s([.\\s\\S]*?)\\s.*?</div>"
+    },
+    "LinksRegEx": {
+        "LocalLinks":       "<a href=\"(.*?)\"",
+        "LinksExcluded":    ".*?print.*?|.*?/feed$|.*?pdf$|.*?jpg$|.*?jpeg$|.*?png$|.*?gif$|.*?xls$",
+        "LinksIncluded":    ".*?/news/.*?|.*?/interview/.*?|.*?/content/.*?"
+    },
+    "DelayRange": [ 11, 13]
+}

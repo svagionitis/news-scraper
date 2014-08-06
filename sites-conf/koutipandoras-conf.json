@@ -1,0 +1,24 @@
+{
+    "BaseURL": "http://www.koutipandoras.gr",
+    "NetworkLocation": ".koutipandoras.gr",
+    "Filenames": {
+        "LinksFetched": "koutipandoras-LinksFetched.pickle",
+        "LinksToFetch": "koutipandoras-LinksToFetch.pickle",
+        "NewsJSON":     "koutipandoras-news.json"
+    },
+    "NewsRegEx": {
+        "NewsTitle":        "<meta property=\"og:title\" content=\"(.*?)\" />",
+        "NewsAuthor":       "<div><a href=\"/author/.*?\" class=\"icon-link\"><span class=\"icon-text\">.*?</span>(.*?)</a>",
+        "NewsDescription":  "<meta name=\"description\" content=\"([.\\s\\S]*?)\" />",
+        "NewsKeywords":     "<meta name=\"keywords\" content=\"(.*?)\" />",
+        "NewsDateCreated":  "<div class=\"date\"><div class=\"calendar-date\">(.*?)</font></div>",
+        "NewsDateUpdated":  "<div class=\"date_updated\"><div class=\"calendar-date\">(.*?)</font></div>",
+        "NewsText":         "<div class=\"shortcode-content\">([.\\s\\S]*?)</div>"
+    },
+    "LinksRegEx": {
+        "LocalLinks":       "<a href=\"(.*?)\"",
+        "LinksExcluded":    ".*?/includes/.*?|.*?/misc/.*?|.*?/modules/.*?|.*?/profiles/.*?|.*?/scripts/.*?|.*?/themes/.*?|.*?/admin/.*?|.*?/comment/reply/.*?|.*?/filter/tips/.*?",
+        "LinksIncluded":    ".*?/article/.*?"
+    },
+    "DelayRange": [ 11, 16]
+}

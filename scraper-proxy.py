@@ -67,6 +67,7 @@ class ScraperProxy():
 
         except IOError:
             print('Connection error for %s with proxy %s' % (dnsdynamic_url, proxy))
+            return None
         else:
             print('IP returned is %s' % ip)
             return ip

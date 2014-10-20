@@ -8,6 +8,8 @@ import random
 class ScraperTor():
     socks_port = 7000
     socks_address = '127.0.0.1'
+    tor_config = {}
+    tor_process = None
 
     def set_socks_port(self, port):
         """ Set the port for SOCKS
@@ -33,13 +35,40 @@ class ScraperTor():
         socket.socket = socks.socksocket
         socket.getaddrinfo = self._getaddrinfo
 
-    def start_tor_process(self,):
+    def _tor_print(self, line):
+        """ Print tor bootstrap info
         """
+        if "Bootstrapped" in line:
+            print "%s" % (line)
+
+    def set_tor_config(self, config):
+        """ Set tor configuration
         """
+        self.tor_config = config
+
+    def start_tor_process(self):
+        """ Start a tor process
+        """
+        self.tor_process = stem.process.launch_tor(init_msg_handler = self._tor_print)
+
+    def start_tor_process_with_config(self, config = None):
+        """ Start a tor process with configuration
+        """
+        config = config or self.tor_config
+
+        if not config:
+            config = {
+                    'SocksPort': str(self.socks_port)
+                    }
+
+        self.tor_process = stem.process.launch_tor_with_config(config, init_msg_handler = self._tor_print)
 
     def stop_tor_process(self,):
+        """ Stop tor process
         """
-        """
+        self.tor_process.kill()
+
+
 
 if __name__ == '__main__':
 

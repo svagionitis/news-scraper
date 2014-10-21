@@ -23,6 +23,11 @@ class ScraperTor():
         """
         self.socks_address = address
 
+    def set_tor_config(self, tor_config):
+        """ Set tor configuration
+        """
+        self.tor_config = tor_config
+
     def _getaddrinfo(*args):
         """ Perfomrs DNS resolution
         """

@@ -6,10 +6,12 @@ import urllib
 import random
 
 class ScraperTor():
-    socks_port = 7000
-    socks_address = '127.0.0.1'
-    tor_config = {}
-    tor_process = None
+
+    def __init__(self, socks_port = 7000, socks_address = '127.0.0.1', tor_config = {}):
+        self.socks_port = socks_port
+        self.socks_address = socks_address
+        self.tor_config = tor_config
+        self.tor_process = None
 
     def set_socks_port(self, port):
         """ Set the port for SOCKS
@@ -77,3 +79,4 @@ if __name__ == '__main__':
     tor.set_socks_proxy()
 
     print('SOCKS Address: %s Port: %s' % (tor.socks_address, tor.socks_port))
+

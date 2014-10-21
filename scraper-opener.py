@@ -2,7 +2,10 @@ import urllib
 import random
 
 class ScraperOpener(urllib.FancyURLopener):
-    _user_agent_list = []
+
+    def __init__(self):
+        urllib.FancyURLopener.__init__(self)
+        self._user_agent_list = []
 
     def set_user_agent(self, user_agent):
         """ Set the user agent

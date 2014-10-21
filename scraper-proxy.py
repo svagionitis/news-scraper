@@ -2,8 +2,10 @@ import urllib
 import random
 
 class ScraperProxy():
-    proxy = None
-    _proxy_list = []
+
+    def __init__(self):
+        self.proxy = None
+        self._proxy_list = []
 
     def set_proxy(self, proxy):
         """ Set the proxy
@@ -25,7 +27,7 @@ class ScraperProxy():
         # If the proxy list is populated, then get the random one
         # Else load the proxies from the file first and then choose one randomly
         if self._proxy_list:
-            set_proxy(random.choice(self._proxy_list))
+            self.set_proxy(random.choice(self._proxy_list))
         else:
             self.load_proxies(filename)
             self.set_proxy(random.choice(self._proxy_list))

@@ -1,9 +1,10 @@
 import socket
 import socks
-import stem
+import stem.process
 
 import urllib
 import random
+import time
 
 class ScraperTor():
 
@@ -70,7 +71,7 @@ class ScraperTor():
 
         self.tor_process = stem.process.launch_tor_with_config(config, init_msg_handler = self._tor_print)
 
-    def stop_tor_process(self,):
+    def stop_tor_process(self):
         """ Stop tor process
         """
         self.tor_process.kill()
@@ -84,4 +85,20 @@ if __name__ == '__main__':
     tor.set_socks_proxy()
 
     print('SOCKS Address: %s Port: %s' % (tor.socks_address, tor.socks_port))
+
+    print('Start tor process...')
+    tor.start_tor_process()
+
+    time.sleep(10)
+
+    print('Stop tor process...')
+    tor.stop_tor_process()
+
+    print('Start tor process with config...')
+    tor.start_tor_process_with_config()
+
+    time.sleep(10)
+
+    print('Stop tor process...')
+    tor.stop_tor_process()
 
